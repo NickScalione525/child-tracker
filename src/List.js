@@ -1,7 +1,6 @@
 import React from 'react'
 import Child from './Child'
 import ChildForm from './ChildForm'
-import ChildFrom from './ChildForm'
 
 class List extends React.Component {
 

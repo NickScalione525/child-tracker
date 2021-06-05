@@ -1,14 +1,19 @@
 import React from 'react'
 import List from './List'
 
+
 class App extends React.Component {
 
+handleClick(e){
+  debugger
+  console.log("clicked!")
+}
+
 render(){
-  let listFromApp = ["Leo", "Henry"]
   return(
   <div>
-    <h1 className="greeting">Hello World</h1>
-    <List childList={listFromApp}/>
+    <h1 className="greeting">Track your Grandkids</h1>
+    <List />
   </div>
   )
   

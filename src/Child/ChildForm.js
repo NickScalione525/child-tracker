@@ -2,19 +2,20 @@ import React from 'react'
 
 class ChildForm extends React.Component{
 
-    constructor(){
-        super()
-        this.state = {childName: "", childAge: 0}
+    constructor(props){
+        super(props)
+        this.state = {childName: ""}
     }
 
     handleSubmit(e){
         e.preventDefault()
+        this.props.sendData(this.state.childName)
+        this.setState({childName: ""})
         
 
     }
 
     handleChange(e){
-        console.log("changed")
         this.setState({[e.target.name]: e.target.value})
     }
 
@@ -22,8 +23,7 @@ class ChildForm extends React.Component{
     render(){
         return(
             <form onSubmit={this.handleSubmit.bind(this)}>
-                <input type="text" onChange={this.handleChange.bind(this)}  value={this.state.childName} name="childName"/>
-                <input type="text" onChange={this.handleChange.bind(this)}  value={this.state.childAge} name="childAge"/> 
+                <input type="text" onChange={this.handleChange.bind(this)}  value={this.state.childName} name="childName"/> 
                 <input type="submit"/>
             </form>
         )

@@ -1,25 +1,29 @@
-import React from 'react'
-import List from './List'
+import React from 'react';
+import ListContainer from './List/ListContainer'
+import NavBar from './NavBar'
 
 
-class App extends React.Component {
+// class App extends React.Component {
+ 
 
-handleClick(e){
-  debugger
-  console.log("clicked!")
-}
 
-render(){
-  return(
-  <div>
-    <h1 className="greeting">Track your Grandkids</h1>
-    <List />
-  </div>
-  )
+// render(){
+//   return(
+//     <Lists />
+//   )
   
-}
+// }
+// }
+
+function App(){
+  return (
+    <>
+    <NavBar />;
+    <ListContainer />
+    </>
+  )
 }
 
-// App inherits from compnent class for react library
+
 
 export default App

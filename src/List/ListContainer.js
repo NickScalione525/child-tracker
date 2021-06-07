@@ -7,42 +7,44 @@ import {Route, Switch} from 'react-router-dom'
 
 class ListContainer extends Component {
 
-  constructor(){
-    super()
-    this.state = {
-      lists: ["Henry", "Leo", "Marlo", "Vera", "Harrison", "Riley"]
-    }
-    this.updateState = this.updateState.bind(this)
-  }
+  // constructor(){
+  //   super()
+  //   this.state = {
+  //     lists: []
+  //   }
+  //   this.updateState = this.updateState.bind(this)
+  // }
 
-  componentDidMount(){
-    fetch("http://localhost:3001/lists")
-    .then(function(response) {
-      return response.json()
-    })
-    .then((listsArray) => {
-      this.setState({lists: listsArray})
-    })
-  }
+  // componentDidMount(){
+  //   fetch("http://localhost:3000/lists")
+  //   .then(function(response) {
+  //     return response.json()
+  //   })
+  //   .then((listsArray) => {
+  //     this.setState({lists: listsArray})
+  //   })
+  // }
 
 
-  updateState(arg){
-    this.setState((prevState, prevProps) => {
-      return {lists: [...prevState.lists, arg]}
-    })
-  }
+  // updateState(arg){
+  //   this.setState((prevState, prevProps) => {
+  //     return {lists: [...prevState.lists, arg]}
+  //   })
+  // }
   
   render(){
     return(
+      <>
       <Switch>
         <Route path="/lists/new">
-        <ListForm sendData={this.updateState}/>
+        <ListForm />
         </Route>
         <Route exact path="/lists">
-          <Lists lists={this.state.lists}/>
+          <Lists />
         </Route>
-        <Route path="/Lists/:id" render={(routerProps) => <List list={this.state.lists.find(list => list.id === parseInt(routerProps.match.params.id))}/>}/>
+        <Route path="/Lists/:id" render={(routerProps) => <List {...routerProps}/>}/>
         </Switch>
+        </>
     )
   }
 }

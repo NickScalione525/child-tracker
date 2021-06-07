@@ -7,7 +7,7 @@ import listsReducer from './reducers/listsReducer'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import {Provider} from 'react-redux'
 
-const initialState = {list: [{id: 1, name: "Leo"}, {id: 2, name: "Henry"}, {id: 3, name: "Harrison"}]}
+const initialState = {lists: [{id: 1, name: "Leo"}, {id: 2, name: "Henry"}, {id: 3, name: "Harrison"}]}
 const store = createStore(listsReducer, initialState, composeWithDevTools())
 console.log(store)
 

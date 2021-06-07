@@ -13,14 +13,14 @@ import {connect} from 'react-redux'
 class Lists extends Component {
     
 
-        constructor(){
-            super()
-            this.state = {redirect: false}
-        }
+        // constructor(){
+        //     super()
+        //     this.state = {redirect: false}
+        // }
 
-        handleClick(){
-            this.setState({redirect: true})
-        }
+        // handleClick(){
+        //     this.setState({redirect: true})
+        // }
 
 
         render(){
@@ -35,8 +35,9 @@ class Lists extends Component {
         }
     }
         function mapStateToProps(state){
+    
 
-            return{lists: state.lists}
+            return {lists: state.lists}
 
         }
     

@@ -7,13 +7,13 @@ import {Route, Switch} from 'react-router-dom'
 
 class ListContainer extends Component {
 
-  // constructor(){
-  //   super()
-  //   this.state = {
-  //     lists: []
-  //   }
-  //   this.updateState = this.updateState.bind(this)
-  // }
+  constructor(){
+    super()
+    this.state = {
+      lists: []
+    }
+    this.updateState = this.updateState.bind(this)
+  }
 
   // componentDidMount(){
   //   fetch("http://localhost:3000/lists")
@@ -26,11 +26,11 @@ class ListContainer extends Component {
   // }
 
 
-  // updateState(arg){
-  //   this.setState((prevState, prevProps) => {
-  //     return {lists: [...prevState.lists, arg]}
-  //   })
-  // }
+  updateState(arg){
+    this.setState((prevState, prevProps) => {
+      return {lists: [...prevState.lists, arg]}
+    })
+  }
   
   render(){
     return(
@@ -42,7 +42,7 @@ class ListContainer extends Component {
         <Route exact path="/lists">
           <Lists />
         </Route>
-        <Route path="/Lists/:id" render={(routerProps) => <List {...routerProps}/>}/>
+        <Route path="/lists/:id" render={(routerProps) => <List {...routerProps}/>}/>
         </Switch>
         </>
     )

@@ -34,7 +34,7 @@ class ListContainer extends Component {
   
   render(){
     return(
-      <switch>
+      <Switch>
         <Route path="/lists/new">
         <ListForm sendData={this.updateState}/>
         </Route>
@@ -42,7 +42,7 @@ class ListContainer extends Component {
           <Lists lists={this.state.lists}/>
         </Route>
         <Route path="/Lists/:id" render={(routerProps) => <List list={this.state.lists.find(list => list.id === parseInt(routerProps.match.params.id))}/>}/>
-        </switch>
+        </Switch>
     )
   }
 }
